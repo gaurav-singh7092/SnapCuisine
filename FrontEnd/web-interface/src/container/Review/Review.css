@@ -1,0 +1,92 @@
+.app__review_bg {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  background: var(--color-black);
+  padding-top: 0;
+}
+
+.app__review {
+  padding: 4rem 13rem;
+  border: 1px solid var(--color-golden);
+  background: var(--color-black);
+}
+
+.app__review-heading {
+  text-align: center;
+}
+
+.app__review-input {
+  width: 600px;
+  margin-top: 10px;
+  border: 2px solid var(--color-golden);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-family: var(--font-base);
+  color: var(--color-white);
+  padding: 0.5rem;
+  background: var(--color-black);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app__review-input:focus {
+  border-color: var(--color-orange);
+  background: var(--color-gray-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateY(-4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app__review-input:focus::placeholder {
+  animation: fadeInOut 2s infinite;
+}
+
+@media screen and (min-width: 2000px) {
+  .app__review-input input {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .app__review-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .app__review-input input {
+    margin: 0 0 2rem 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__review {
+    padding: 2rem 0;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .app__review-heading h1 {
+    font-size: 32px;
+    line-height: 50px;
+  }
+}
